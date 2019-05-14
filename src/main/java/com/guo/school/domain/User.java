@@ -1,0 +1,87 @@
+package com.guo.school.domain;
+
+import java.util.List;
+
+/**
+ * 用户信息
+ */
+public class User {
+    // 成员变量
+    private Integer userid;
+    private String username;
+    private Integer id;
+    private String name;
+    private String password;
+    private List<Role> roles;
+    private List<Permission> permission;
+    // 构造函数
+    public User() {
+        super();
+    }
+
+    public User(Integer userid, String username, String password) {
+        super();
+        this.userid = userid;
+        this.username = username;
+        this.password = password;
+    }
+
+    // 成员方法
+    public Integer getUserid() {
+        return userid;
+    }
+
+    public void setUserid(Integer userid) {
+        this.userid = userid;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+	public List<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
+
+	public List<Permission> getPermission() {
+		return permission;
+	}
+
+	public void setPermission(List<Permission> permission) {
+		this.permission = permission;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	
+     
+}

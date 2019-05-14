@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guo.school.dao.RoleDao">
+
+    <insert id="insert" parameterType="Role" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO role (name) VALUES (#{name})
+    </insert>
+
+    <delete id="delete" parameterType="java.lang.Long">
+        DELETE FROM role WHERE id = #{id}
+    </delete>
+
+    <update id="update" parameterType="Role">
+        UPDATE role SET name = #{name} WHERE id = #{id}
+    </update>
+
+    <select id="getRoleById" parameterType="java.lang.Long" resultType="Role">
+        SELECT * FROM role WHERE id = #{id}
+    </select>
+    <select id="listRoleByUserId" parameterType="java.lang.Integer" resultType="Role">
+        SELECT r.* FROM user_role ur inner join role r on ur.roleId=r.id WHERE ur.userId = #{uesrId}
+    </select>
+
+</mapper>
