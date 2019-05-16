@@ -61,8 +61,8 @@ public class ShiroConfig {
         
         ShiroFilterFactoryBean shiroFilter = new ShiroFilterFactoryBean();
         shiroFilter.setSecurityManager(securityManager);
-        shiroFilter.setLoginUrl("/a/login/fail");//未登录跳转
-        shiroFilter.setUnauthorizedUrl("/a/permission/fail");//未授权跳转
+        shiroFilter.setLoginUrl("/login/loginpage");//未登录跳转
+        shiroFilter.setUnauthorizedUrl("/login/permissionfail");//未授权跳转
         LinkedHashMap<String,String> filterChainDefinitionMap = new LinkedHashMap<>();
         
         List<Permission> permissions=permissionService.listPermissions();
@@ -78,7 +78,7 @@ public class ShiroConfig {
 //        filterChainDefinitionMap.put("/a/u/third","perms[3]");
 //        log.info("第三链");
         
-        filterChainDefinitionMap.put("/a//**","anon");
+        filterChainDefinitionMap.put("//**","anon");
         
         log.info("执行顺序 : " + filterChainDefinitionMap);
         

@@ -12,5 +12,6 @@
 </head>
 <body>
 <h2>Log in Fail!</h2>
+${errorInfo}
 </body>
 </html>

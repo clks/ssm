@@ -124,7 +124,7 @@ public class MyRealm extends AuthorizingRealm{
                 throw new UnknownAccountException("密码错误");
             }
         }catch (Exception e){
-            throw new AuthenticationException();
+            throw new AuthenticationException(e.getMessage());
         }
         
         SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(user,password,getName());

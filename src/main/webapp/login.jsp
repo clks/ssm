@@ -5,12 +5,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>SCT-后台系统</title>
-<link href="css/login_css.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+<link href="../css/login_css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jquery-3.4.1.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#login_sub").click(function(){
-			$("#submitForm").attr("action", "user/login").submit();
+			$("#submitForm").attr("action", "${pageContext.request.contextPath}/login/loginpage").submit();
 		});
 	});
 	
@@ -18,7 +18,7 @@
 	function EnterPress(e){ //传入 event 
 		var e = e || window.event; 
 		if(e.keyCode == 13){ 
-			$("#submitForm").attr("action", "user/login").submit();
+			$("#submitForm").attr("action", "${pageContext.request.contextPath}/login/loginpage").submit();
 		} 
 	} 
 </script>
@@ -33,7 +33,7 @@
 							<span id="login_err" class="sty_txt2"></span>
 						</div>
 						<div>
-							 用户名：<input type="text" name="username" class="username" id="name" >
+							 用户名：<input type="text" name="name" class="username" id="name" >
 						</div>
 						<div>
 							密&nbsp;&nbsp;&nbsp;&nbsp;码：<input type="password" name="password" class="pwd" id="pwd" onkeypress="EnterPress(event)" onkeydown="EnterPress()">
